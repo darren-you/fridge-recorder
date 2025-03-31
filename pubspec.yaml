@@ -1,0 +1,138 @@
+name: flutternow
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # iOS风格icon
+  cupertino_icons: ^1.0.8
+
+  # 状态管理
+  hooks_riverpod: ^2.6.1
+  flutter_hooks: ^0.20.5
+  riverpod_annotation: ^2.6.0
+
+  # 依赖注入
+  get_it: 8.0.2
+
+  # Model
+  freezed_annotation: 2.4.4
+  json_annotation: 4.9.0
+
+  # 路由
+  go_router: 14.8.0
+
+  # 类似Kotlin扩展方法，更优雅地处理数据操作，减少样板代码
+  dartx: 1.2.0
+
+  # 网络
+  retrofit: 4.4.1
+  dio: 5.7.0
+
+  # Toast
+  bot_toast: 4.1.3
+
+  # 本地缓存
+  shared_preferences: 2.3.3
+
+  # 事件总线
+  event_bus: 2.0.1
+
+  # 动画
+  flutter_animate: 4.5.2
+  animations: 2.0.11
+  lottie: 3.3.1
+
+  # 系统代理
+  flutter_system_proxy:
+    git: 'https://github.com/HaijunWei/flutter_system_proxy.git'
+
+  # App包信息
+  package_info_plus: 8.1.2
+
+  # 设备信息
+  device_info_plus: 11.2.0
+
+  # uuid
+  uuid: 4.5.1
+
+  # Android 设备ID
+  android_id: 0.4.0
+
+  # 录音
+  record: ^5.2.1
+
+  # 加密
+  crypto: 3.0.6
+
+  # svg支持
+  flutter_svg: ^2.0.17
+
+  # 图片扩展
+  extended_image: 9.1.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # 模版代码生成
+  build_runner:
+  flutter_gen_runner:
+
+  # 状态管理模板代码生成、静态检查
+  riverpod_generator:
+  riverpod_lint:
+
+  # retrofit注解生成
+  retrofit_generator:
+
+  # Model相关
+  json_serializable:
+  freezed:
+
+  # go_router路由
+  go_router_builder:
+
+  # 静态检查
+  flutter_lints: ^5.0.0
+  custom_lint:
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+    - assets/lotties/
+    - assets/videos/
+    - assets/svg/
+
+  fonts:
+    - family: HarmonyOS Sans SC
+      fonts:
+        - asset: assets/fonts/HarmonyOS_Sans_SC_Black.ttf
+          weight: 900
+        - asset: assets/fonts/HarmonyOS_Sans_SC_Bold.ttf
+          weight: 700
+        - asset: assets/fonts/HarmonyOS_Sans_SC_Light.ttf
+          weight: 300
+        - asset: assets/fonts/HarmonyOS_Sans_SC_Medium.ttf
+          weight: 500
+        - asset: assets/fonts/HarmonyOS_Sans_SC_Regular.ttf
+          weight: 400
+        - asset: assets/fonts/HarmonyOS_Sans_SC_Thin.ttf
+          weight: 100
+
+# 运行 flutter pub run build_runner build 生成的image、fonts指定保存在output路径下
+# 图片通过 Assets.images.icLoginApple 访问
+# 字体通过 FontFamily.harmonyOSSansSC
+flutter_gen:
+  output: lib/generated/
+  line_length: 80
