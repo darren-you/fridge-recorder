@@ -26,6 +26,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icon_barcode.svg
   String get iconBarcode => 'assets/svg/icon_barcode.svg';
 
+  /// File path: assets/svg/icon_message.svg
+  String get iconMessage => 'assets/svg/icon_message.svg';
+
   /// File path: assets/svg/icon_navback.svg
   String get iconNavback => 'assets/svg/icon_navback.svg';
 
@@ -34,7 +37,7 @@ class $AssetsSvgGen {
 
   /// List of all assets
   List<String> get values =>
-      [iconArrowdown, iconBarcode, iconNavback, iconRight];
+      [iconArrowdown, iconBarcode, iconMessage, iconNavback, iconRight];
 }
 
 class $AssetsVideosGen {

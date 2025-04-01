@@ -33,9 +33,9 @@ class FoodsPage extends ConsumerWidget {
               ),
               Expanded(child: SizedBox()),
               SvgPicture.asset(
-                Assets.svg.iconBarcode,
-                width: 24,
-                height: 24,
+                Assets.svg.iconMessage,
+                width: 20,
+                height: 20,
               ),
               const Padding(
                 padding: EdgeInsets.only(right: 16),
