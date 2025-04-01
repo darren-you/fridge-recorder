@@ -6,8 +6,8 @@ import 'package:flutternow/base/base.dart';
 /// 设置App状态栏、导航栏颜色
 const kSystemUiOverlayStyle = SystemUiOverlayStyle(
   statusBarColor: Colors.transparent,
-  statusBarBrightness: Brightness.dark,
-  statusBarIconBrightness: Brightness.dark,
+  statusBarBrightness: Brightness.light,
+  statusBarIconBrightness: Brightness.light,
   systemNavigationBarColor: Colors.transparent,
   systemNavigationBarDividerColor: Colors.transparent,
   systemNavigationBarContrastEnforced: false,

@@ -51,9 +51,7 @@ class AccountLoginPage extends HookConsumerWidget {
 
     return Scaffold(
       backgroundColor: Colors.white.withValues(alpha: 0.9),
-      appBar: MAppBar(
-        title: '账号登录',
-      ),
+      appBar: MAppBar(),
       body: Container(
         // color: Colors.blue,
         padding: const EdgeInsets.symmetric(horizontal: 64),

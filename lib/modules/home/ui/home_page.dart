@@ -2,9 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutternow/modules/fun_example/ui/fun_example_page.dart';
-import 'package:flutternow/modules/mine_example/ui/mine_example_page.dart';
-import 'package:flutternow/modules/ui_example/ui_example.dart';
+import 'package:flutternow/modules/add/ui/normal_add_page.dart';
+import 'package:flutternow/modules/mine/ui/mine_page.dart';
+import 'package:flutternow/modules/foods/foods.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 const _navBarHeight = 56;
@@ -18,9 +18,9 @@ class HomePage extends ConsumerStatefulWidget {
 
 class _MainPageState extends ConsumerState<HomePage> {
   final _pages = [
-    const UiExamplePage(),
-    const FunExamplePage(),
-    const MineExamplePage(),
+    const FoodsPage(),
+    const NormalAddPage(),
+    const MinePage(),
   ];
 
   int _currentIndex = 1;
@@ -72,9 +72,9 @@ class _MainPageState extends ConsumerState<HomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        _buildNavItem(0, CupertinoIcons.game_controller, '界面'),
-                        _buildNavItem(1, CupertinoIcons.bus, '功能'),
-                        _buildNavItem(2, CupertinoIcons.person, '我的'),
+                        _buildTextNavItem(0, '食物'),
+                        _buildAddButton(1),
+                        _buildTextNavItem(2, '我的'),
                       ],
                     ),
                   ),
@@ -87,34 +87,53 @@ class _MainPageState extends ConsumerState<HomePage> {
     );
   }
 
-  Widget _buildNavItem(int index, IconData icon, String label) {
+  Widget _buildTextNavItem(int index, String label) {
     final isSelected = _currentIndex == index;
-    final color = isSelected
-        ? Theme.of(context).colorScheme.primary
-        : Theme.of(context).colorScheme.onSurface;
+    final color = isSelected ? Colors.black : Colors.grey;
 
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
-      onTap: () {
-        setState(() => _currentIndex = index);
-      },
+      onTap: () => setState(() => _currentIndex = index),
       child: Container(
         height: 56,
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, color: color),
-            const SizedBox(height: 4),
-            Text(
-              label,
-              style: TextStyle(
-                color: color,
-                fontSize: 12,
-                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
-              ),
+        child: Center(
+          child: Text(
+            label,
+            style: TextStyle(
+              color: color,
+              fontSize: 16,
+              fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
             ),
-          ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAddButton(int index) {
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () => setState(() => _currentIndex = index),
+      child: Container(
+        height: 56,
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Center(
+          child: Container(
+            width: 56,
+            height: 32,
+            decoration: BoxDecoration(
+              color: _currentIndex == index
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.onSurface,
+              borderRadius: BorderRadius.circular(32),
+            ),
+            child: Icon(
+              Icons.add,
+              color: Colors.white,
+              size: 20,
+            ),
+          ),
         ),
       ),
     );

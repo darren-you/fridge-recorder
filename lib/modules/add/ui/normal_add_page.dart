@@ -1,12 +1,14 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:flutternow/app.dart';
 import 'package:flutternow/base/base.dart';
+import 'package:flutternow/managers/protocol_manager.dart';
+import 'package:flutternow/router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class UiExamplePage extends ConsumerWidget {
-  const UiExamplePage({super.key});
+class NormalAddPage extends ConsumerWidget {
+  const NormalAddPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -14,14 +16,11 @@ class UiExamplePage extends ConsumerWidget {
       extendBodyBehindAppBar: true,
       appBar: MAppBar(
         backgroundColor: Colors.white.withValues(alpha: 0.8),
-        title: 'UI',
-        enabledBackdrop: true,
       ),
       backgroundColor: Colors.grey.withValues(alpha: 0.4),
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        // color: Colors.grey,
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: ListView.builder(
           itemCount: _buildFunMenuList(context).length,
@@ -35,7 +34,35 @@ class UiExamplePage extends ConsumerWidget {
 
   List<Widget> _buildFunMenuList(BuildContext context) {
     return [
-      _menuItem('UI示例', () {
+      _menuItem('清除隐私协议状态', () {
+        ProtocolManager.instance.removeAgreedAppProtocol();
+        BotToast.showText(text: '清除成功✅');
+      }),
+      _menuItem('游客登陆', () {
+        BotToast.showText(text: '待实现');
+      }),
+      _menuItem('账号登陆', () {
+        AccoutLoginRoute().push(context);
+      }),
+      _menuItem('验证码登陆', () {
+        BotToast.showText(text: '待实现');
+      }),
+      _menuItem('微信登陆', () {
+        BotToast.showText(text: '待实现');
+      }),
+      _menuItem('QQ登陆', () {
+        BotToast.showText(text: '待实现');
+      }),
+      _menuItem('资料更新', () {
+        BotToast.showText(text: '待实现');
+      }),
+      _menuItem('退出登陆', () {
+        BotToast.showText(text: '待实现');
+      }, nameColor: Colors.red),
+      _menuItem('微信支付', () {
+        BotToast.showText(text: '待实现');
+      }),
+      _menuItem('支付宝支付', () {
         BotToast.showText(text: '待实现');
       }),
     ];

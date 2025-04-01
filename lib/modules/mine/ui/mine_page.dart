@@ -5,8 +5,8 @@ import 'package:flutternow/base/widgets/network_image_view.dart';
 import 'package:flutternow/providers/app_user_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class MineExamplePage extends ConsumerWidget {
-  const MineExamplePage({super.key});
+class MinePage extends ConsumerWidget {
+  const MinePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
